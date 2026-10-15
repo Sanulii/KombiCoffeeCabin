@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Kombi Coffee Cabin by Sam</title>
+  <meta name="description" content="Photos from Kombi Coffee Cabin by Sam — the van, the crew, the pours, and the long road into Habarana.">
+
+  <!-- External Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+    <img
+      class="brand-badge"
+      src="images/logo/1.png"
+      alt="Kombi Coffee Cabin logo"
+/>
+      <div class="brand-name">Kombi Coffee Cabin<span>BY SAM · EST. LOCAL FAVORITE</span></div>
+    </div>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html" class="is-current">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+  <div class="scallop-strip"></div>
+</header>
+
+<main class="page-gallery">
+
+  <!-- ── Page intro ── -->
+  <section class="kg-hero">
+    <div class="wrap">
+      <span class="eyebrow">06 / Gallery</span>
+      <h1 class="kg-title">From the Cabin</h1>
+      <div class="kg-sub">— Snapshots —</div>
+      <p class="kg-lede">A running record of the van, the counter, the regulars and everything that comes out of the machine. Mostly mornings, a few late nights.</p>
+      <ul class="kg-meta">
+        <li class="mono"><span class="kg-dot"></span>HABARANA · SRI LANKA</li>
+        <li class="mono"><span class="kg-dot"></span>PHONE &amp; FILM</li>
+        <li class="mono"><span class="kg-dot"></span>UPDATED EVERY WEEK</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Rolling ticker ── -->
+  <div class="kg-strip" aria-hidden="true">
+    <div class="kg-strip-track">
+      <span class="kg-strip-run">FRESH GRIND · DAILY POUR · SLOW MORNINGS · STRONG COFFEE · GOOD COMPANY · THE SAME CORNER EVERY DAY ·&nbsp;</span>
+      <span class="kg-strip-run">FRESH GRIND · DAILY POUR · SLOW MORNINGS · STRONG COFFEE · GOOD COMPANY · THE SAME CORNER EVERY DAY ·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ── Filter bar ── -->
+  <section class="kg-toolbar">
+    <div class="wrap kg-toolbar-inner">
+      <div class="kg-filters" role="group" aria-label="Filter photos">
+        <button class="kg-chip is-on" type="button" data-filter="all">All</button>
+        <button class="kg-chip" type="button" data-filter="coffee">Coffee</button>
+        <button class="kg-chip" type="button" data-filter="cabin">Cabin</button>
+        <button class="kg-chip" type="button" data-filter="road">Road</button>
+        <button class="kg-chip" type="button" data-filter="people">People</button>
+      </div>
+      <p class="kg-count mono" id="kg-count" aria-live="polite">Showing 9 frames</p>
+    </div>
+  </section>
+
+  <!-- ── The grid ── -->
+  <section class="kg-section">
+    <div class="wrap">
+      <div class="kg-grid" id="kg-grid">
+
+        <figure class="kg-tile" data-cat="coffee">
+          <button class="kg-shot kg-shot--tall" type="button" aria-label="Open photo: The first pour">
+            <img src="images/gallery/1.jpg.jpg" alt="The first pour">
+          </button>
+          <figcaption class="kg-cap">
+            <span class="kg-num mono">01</span>
+            <span class="kg-name">The first pour</span>
+            <span class="kg-tag mono">Coffee</span>
+          </figcaption>
+        </figure>
+
+        <figure class="kg-tile" data-cat="cabin">
+          <button class="kg-shot kg-shot--square" type="button" aria-label="Open photo: Sam at the window">
+            <img src="images/gallery/10.jpg.jpg" alt="Sam at the window">
+          </button>
+          <figcaption class="kg-cap">
+            <span class="kg-num mono">02</span>
+            <span class="kg-name">Sam at the window</span>
+            <span class="kg-tag mono">Cabin</span>
+          </figcaption>
+        </figure>
+
+        <figure class="kg-tile" data-cat="road">
+          <button class="kg-shot kg-shot--wide" type="button" aria-label="Open photo: Road dust and diesel">
+            <img src="images/gallery/12.jpg.jpeg" alt="Road dust &amp; diesel">
+          </button>
+          <figcaption class="kg-cap">
+            <span class="kg-num mono">03</span>
+            <span class="kg-name">Road dust &amp; diesel</span>
+            <span class="kg-tag mono">Road</span>
+          </figcaption>
+        </figure>
+
+        <figure class="kg-tile" data-cat="coffee">
+          <button class="kg-shot kg-shot--square" type="button" aria-label="Open photo: Latte, no games">
+            <img src="images/gallery/11.jpg.jpeg" alt="Latte, no games">
+          </button>
+          <figcaption class="kg-cap">
+            <span class="kg-num mono">04</span>
+            <span class="kg-name">Latte, no games</span>
+            <span class="kg-tag mono">Coffee</span>
+          </figcaption>
+        </figure>
+
+        <figure class="kg-tile" data-cat="people">
+          <button class="kg-shot kg-shot--tall" type="button" aria-label="Open photo: The regulars table">
+            <img src="images/gallery/5.jpg.jpg" alt="The regulars table">
+          </button>
+          <figcaption class="kg-cap">
+            <span class="kg-num mono">05</span>
+            <span class="kg-name">The regulars table</span>
+            <span class="kg-tag mono">People</span>
+          </figcaption>
+        </figure>
+
+        <figure class="kg-tile" data-cat="cabin">
+          <button class="kg-shot kg-shot--wide" type="button" aria-label="Open photo: Golden hour in Habarana">
+            <img src="images\gallery\espresso.jpg.jpeg" alt="Golden hour, Habarana">
+          </button>
+          <figcaption class="kg-cap">
+            <span class="kg-num mono">06</span>
+            <span class="kg-name">Golden hour, Habarana</span>
+            <span class="kg-tag mono">Cabin</span>
+          </figcaption>
+        </figure>
+
+        <figure class="kg-tile" data-cat="coffee">
+          <button class="kg-shot kg-shot--square" type="button" aria-label="Open photo: Cold brew, cold night">
+          <img src="images/gallery/9.jpg.jpg" alt="Cold brew, cold night">
+          </button>
+          <figcaption class="kg-cap">
+            <span class="kg-num mono">07</span>
+            <span class="kg-name">Cold brew, cold night</span>
+            <span class="kg-tag mono">Coffee</span>
+          </figcaption>
+        </figure>
+
+        <figure class="kg-tile" data-cat="road">
+          <button class="kg-shot kg-shot--tall" type="button" aria-label="Open photo: The van before sunrise">
+            <img src="images/gallery/14.jpg.jpg" alt="The van before sunrise">
+          </button>
+          <figcaption class="kg-cap">
+            <span class="kg-num mono">08</span>
+            <span class="kg-name">The van before sunrise</span>
+            <span class="kg-tag mono">Road</span>
+          </figcaption>
+        </figure>
+
+        <figure class="kg-tile" data-cat="people">
+          <button class="kg-shot kg-shot--wide" type="button" aria-label="Open photo: Kids cocoa, big foam">
+            <img src="images/gallery/13.jpg.jpeg" alt="Kids cocoa, big foam">
+          </button>
+          <figcaption class="kg-cap">
+            <span class="kg-num mono">09</span>
+            <span class="kg-name">Kids cocoa, big foam</span>
+            <span class="kg-tag mono">People</span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Closing call ── -->
+  <section class="kg-cta">
+    <div class="wrap">
+      <h2 class="kg-cta-title">Now you're thirsty.</h2>
+      <p class="kg-cta-text">Pick something off the menu, or build a cup exactly the way you like it.</p>
+      <div class="btn-row kg-cta-row">
+        <a class="btn btn-solid" href="menu.html">See the menu</a>
+        <a class="btn btn-outline" href="customize.html">Build a cup</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Photo viewer ── -->
+<div class="kg-lb" id="kg-lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="kg-lb-veil" data-close></div>
+  <div class="kg-lb-panel">
+    <div class="kg-lb-stage" id="kg-lb-stage"></div>
+    <div class="kg-lb-bar">
+      <span class="kg-lb-idx mono" id="kg-lb-idx">01</span>
+      <span class="kg-lb-cap" id="kg-lb-cap">Photo</span>
+      <span class="kg-lb-tag mono" id="kg-lb-tag">Coffee</span>
+    </div>
+    <button class="kg-lb-x" type="button" id="kg-lb-x" aria-label="Close photo viewer">✕</button>
+    <button class="kg-lb-arrow kg-lb-prev" type="button" id="kg-lb-prev" aria-label="Previous photo">‹</button>
+    <button class="kg-lb-arrow kg-lb-next" type="button" id="kg-lb-next" aria-label="Next photo">›</button>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">Kombi Coffee Cabin by Sam</div>
+    <div class="foot-sub">MADE WITH LOVE, DIESEL FUMES &amp; GOOD BEANS</div>
+  </div>
+</footer>
+
+<!-- Modular JavaScript Files -->
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/gallery-page.js"></script>
+</body>
+</html>

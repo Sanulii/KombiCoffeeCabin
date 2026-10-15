@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About | Kombi Coffee Cabin by Sam</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/customizer.css">
+
+
+<style>
+  #coffee-buddy {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+  }
+
+  #buddy-toggle {
+    background: #8F2B1A;
+    color: #FAF5EB;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px #0003;
+  }
+
+  #buddy-window {
+    position: absolute;
+    right: 0;
+    bottom: 65px;
+    width: 330px;
+    max-width: calc(100vw - 32px);
+    height: 420px;
+    max-height: calc(100vh - 120px);
+    background: #FAF5EB;
+    border: 1px solid #D4A359;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px #0003;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #buddy-window[hidden] {
+    display: none;
+  }
+
+  #buddy-header {
+    background: #2D221C;
+    color: #FAF5EB;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #buddy-header strong {
+    font-size: 15px;
+  }
+
+  #buddy-header div div {
+    font-size: 12px;
+    margin-top: 5px;
+    opacity: 0.8;
+  }
+
+  #buddy-close {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  #buddy-messages {
+    flex: 1;
+    padding: 14px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buddy-message {
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .buddy-ai {
+    background: #EDE2D0;
+    color: #2D221C;
+    align-self: flex-start;
+    max-width: 90%;
+  }
+
+  .buddy-user {
+    background: #8F2B1A;
+    color: white;
+    align-self: flex-end;
+    max-width: 90%;
+  }
+
+  #buddy-form {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border-top: 1px solid #D8C8B5;
+  }
+
+  #buddy-input {
+    min-width: 0;
+    flex: 1;
+    padding: 11px;
+    border: 1px solid #D8C8B5;
+    border-radius: 20px;
+    outline-color: #B83B26;
+    font-size: 13px;
+  }
+
+  #buddy-send {
+    border: none;
+    background: #8F2B1A;
+    color: white;
+    border-radius: 20px;
+    padding: 0 14px;
+    cursor: pointer;
+  }
+
+  #buddy-toggle:focus-visible,
+  #buddy-close:focus-visible,
+  #buddy-send:focus-visible {
+    outline: 2px solid #D4A359;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 420px) {
+    #coffee-buddy {
+      right: 12px;
+      bottom: 12px;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <!-- HEADER -->
+<header>
+  <nav class="wrap">
+    <div class="brand">
+    <img
+      class="brand-badge"
+      src="images/logo/1.png"
+      alt="Kombi Coffee Cabin logo"
+/>
+      <div class="brand-name">Kombi Coffee Cabin<span>BY SAM · EST. LOCAL FAVORITE</span></div>
+    </div>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+  <div class="scallop-strip"></div>
+</header>
+
+
+<!-- ============================================================
+     DRINK CUSTOMIZER SECTION
+     Needs css/customizer.css (in <head>) and js/customizer.js (at bottom)
+     ============================================================ -->
+<section id="brew-customizer">
+  <div class="wrap">
+    <h2>Build Your Perfect Cup!</h2>
+    <div class="sub">— Watch it come together —</div>
+
+    <div class="bc-grid">
+      <!-- LIVE CUP -->
+      <div class="bc-stage">
+        <div class="bc-cup-area">
+          <div class="bc-saucer"></div>
+          <div class="bc-cup bc-size-m" id="bcCup">
+            <div class="bc-steam" id="bcSteam"><span></span><span></span><span></span></div>
+            <div class="bc-fill" id="bcFill"></div>
+            <div id="bcDrips"></div>
+
+            <!-- whipped cream swirl -->
+            <svg class="bc-cream bc-hidden" id="bcCream" viewBox="0 0 130 80" aria-hidden="true">
+              <ellipse cx="65" cy="66" rx="62" ry="16" fill="#fdf6ea"/>
+              <ellipse cx="65" cy="50" rx="48" ry="14" fill="#fffaf1"/>
+              <ellipse cx="65" cy="36" rx="33" ry="12" fill="#fdf6ea"/>
+              <ellipse cx="65" cy="24" rx="20" ry="10" fill="#fffaf1"/>
+              <path d="M65 6 q12 6 8 16 q-6 6 -14 2 q-4 -10 6 -18z" fill="#fffdf8"/>
+            </svg>
+
+            <!-- chocolate drizzle -->
+            <svg class="bc-drizzle bc-hidden" id="bcChoc" viewBox="0 0 132 70" aria-hidden="true">
+              <path d="M8 20 q16 14 30 2 t30 2 t30 2 t26 -4" fill="none" stroke="#3a1f0e" stroke-width="5" stroke-linecap="round"/>
+              <path d="M14 38 q18 12 34 0 t34 0 t36 -6" fill="none" stroke="#4a2812" stroke-width="4" stroke-linecap="round"/>
+              <path d="M30 54 q20 10 40 0 t32 -8" fill="none" stroke="#3a1f0e" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+
+            <!-- caramel drizzle -->
+            <svg class="bc-drizzle bc-hidden" id="bcCaramel" viewBox="0 0 132 70" aria-hidden="true">
+              <path d="M10 14 q20 16 36 4 t36 4 t36 -2" fill="none" stroke="#d1913c" stroke-width="4" stroke-linecap="round"/>
+              <path d="M20 34 q16 12 32 0 t32 0 t34 -8" fill="none" stroke="#e0a452" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M26 52 q22 12 44 0 t30 -6" fill="none" stroke="#c9842f" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+
+            <div class="bc-topping-field" id="bcField"></div>
+          </div>
+        </div>
+        <div class="bc-cup-label">
+          <div class="bc-cup-name" id="bcCupName">Medium Cabin Latte</div>
+          <div class="bc-cup-desc" id="bcCupDesc"></div>
+        </div>
+      </div>
+
+           <!-- CONTROLS -->
+      <div class="bc-controls">
+        <div class="bc-group">
+          <h3>1 · Choose your drink</h3>
+          <div class="bc-pills" id="bcDrinks"></div>
+        </div>
+
+        <div class="bc-group">
+          <h3>2 · Size</h3>
+          <div class="bc-pills" id="bcSizes"></div>
+        </div>
+
+        <div class="bc-group">
+          <h3>3 · Milk</h3>
+          <div class="bc-pills" id="bcMilks"></div>
+        </div>
+
+        <div class="bc-group">
+          <h3>4 · Add-ons</h3>
+          <div class="bc-pills" id="bcAddons"></div>
+        </div>
+
+        <div class="bc-summary">
+          <h3>Your order</h3>
+          <div id="bcLines"></div>
+          <div class="bc-total"><span>Total</span><span id="bcTotal">LKR 0</span></div>
+          <button class="btn btn-solid bc-add-btn" id="bcAddBtn" type="button">Add to Order</button>
+          <div class="bc-toast" id="bcToast">Added to your order ☕</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">Kombi Coffee Cabin by Sam</div>
+    <div class="foot-sub">MADE WITH LOVE, DIESEL FUMES &amp; GOOD BEANS</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/customizer.js"></script>
+
+
+<!-- Kombi Coffee Buddy -->
+<div id="coffee-buddy">
+  <button id="buddy-toggle" type="button" aria-label="Open Coffee Buddy">
+    ☕ Chat with Coffee Buddy
+  </button>
+
+  <div id="buddy-window" hidden>
+    <div id="buddy-header">
+      <div>
+        <strong>Kombi Coffee Buddy ☕</strong>
+        <div>Your friendly coffee assistant</div>
+      </div>
+      <button id="buddy-close" type="button" aria-label="Close chat">×</button>
+    </div>
+
+    <div id="buddy-messages" aria-live="polite">
+      <div class="buddy-message buddy-ai">
+        Hey there! ☕ What kind of coffee are you craving today?
+      </div>
+    </div>
+
+    <form id="buddy-form">
+      <input
+        id="buddy-input"
+        type="text"
+        placeholder="Ask me about coffee..."
+        autocomplete="off"
+        required
+      />
+      <button id="buddy-send" type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+  const buddyToggle = document.getElementById("buddy-toggle");
+  const buddyWindow = document.getElementById("buddy-window");
+  const buddyClose = document.getElementById("buddy-close");
+  const buddyForm = document.getElementById("buddy-form");
+  const buddyInput = document.getElementById("buddy-input");
+  const buddyMessages = document.getElementById("buddy-messages");
+  const buddySend = document.getElementById("buddy-send");
+
+  const buddyHistory = [];
+
+  buddyToggle.addEventListener("click", () => {
+    buddyWindow.hidden = false;
+    buddyToggle.hidden = true;
+    buddyInput.focus();
+  });
+
+  buddyClose.addEventListener("click", () => {
+    buddyWindow.hidden = true;
+    buddyToggle.hidden = false;
+  });
+
+  function addBuddyMessage(text, sender) {
+    const message = document.createElement("div");
+    message.className = "buddy-message " +
+      (sender === "user" ? "buddy-user" : "buddy-ai");
+    message.textContent = text;
+    buddyMessages.appendChild(message);
+    buddyMessages.scrollTop = buddyMessages.scrollHeight;
+    return message;
+  }
+
+  buddyForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const message = buddyInput.value.trim();
+    if (!message) return;
+
+    addBuddyMessage(message, "user");
+    buddyInput.value = "";
+    buddyInput.disabled = true;
+    buddySend.disabled = true;
+
+    const loadingMessage = addBuddyMessage("Brewing your answer... ☕", "ai");
+
+    try {
+      const response = await fetch("/.netlify/functions/coffee-buddy", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message,
+          history: buddyHistory
+        })
+      });
+
+      const data = await response.json();
+      loadingMessage.remove();
+
+      if (!response.ok) {
+        throw new Error(data.error || "The coffee buddy is unavailable.");
+      }
+
+      const reply = data.reply || "Sorry, could you ask me another way?";
+      addBuddyMessage(reply, "ai");
+
+      buddyHistory.push(
+        { role: "user", parts: [{ text: message }] },
+        { role: "model", parts: [{ text: reply }] }
+      );
+    } catch (error) {
+      loadingMessage.textContent =
+        "Sorry, I couldn't connect just now. Please try again in a moment.";
+      console.error("Coffee Buddy:", error);
+    } finally {
+      buddyInput.disabled = false;
+      buddySend.disabled = false;
+      buddyInput.focus();
+    }
+  });
+</script>
+
+
+</body>
+</html>
