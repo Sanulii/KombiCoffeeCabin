@@ -1,0 +1,34 @@
+/* Animations */
+.sun-rays {
+  position: absolute;
+  top: -40px; left: 50%;
+  transform: translateX(-50%);
+  width: 340px; height: 340px;
+  z-index: 0;
+  animation: spin 40s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sun-rays { animation: none; }
+}
+
+/* Bouncing effect on the Kombi van */
+@keyframes floatVan {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.van-img {
+  animation: floatVan 3s ease-in-out infinite;
+}
