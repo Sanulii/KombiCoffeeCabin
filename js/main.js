@@ -1,0 +1,1 @@
+console.log('Kombi Coffee Cabin site loaded.');
